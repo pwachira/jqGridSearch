@@ -1,1 +1,0 @@
-﻿<%@ WebService Language="C#" CodeBehind="PharmService.asmx.cs" Class="Pharmacy.PharmSvc" %>

@@ -55,30 +55,8 @@
     <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Data.Linq">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Transactions" />
-    <Reference Include="System.Web.ApplicationServices" />
-    <Reference Include="System.Web.DynamicData" />
-    <Reference Include="System.Web.Entity" />
-    <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Web.Services" />
-    <Reference Include="System.EnterpriseServices" />
-    <Reference Include="System.Web.Mobile" />
-    <Reference Include="System.Xml.Linq" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="css\custom.css" />
-    <Content Include="ExcelExport.aspx" />
-    <Content Include="PharmService.asmx" />
+    <Content Include="index.htm" />
     <Content Include="scripts\lib\jquery-1.5.2.min.js" />
     <Content Include="scripts\lib\jquery-1.6.4.min.js" />
     <Content Include="scripts\lib\jquery.jqGrid-4.4.1\css\ellipsis-xbl.xml" />
@@ -200,137 +178,15 @@
     <Content Include="scripts\lib\jquery.jqGrid-4.4.1\src\jqModal.js" />
     <Content Include="scripts\lib\jquery.jqGrid-4.4.1\src\jquery.fmatter.js" />
     <Content Include="scripts\lib\jquery.jqGrid-4.4.1\src\JsonXml.js" />
-    <Content Include="searchdemo.htm" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="helpers\LinqExtensions.cs" />
-    <Compile Include="helpers\StringEnum.cs" />
-    <Compile Include="helpers\WhereOperation.cs" />
-    <Compile Include="linq\ArchiveClasses.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ArchiveClasses.dbml</DependentUpon>
-    </Compile>
-    <Compile Include="linq\CssPharm.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CssPharm.dbml</DependentUpon>
-    </Compile>
-    <Compile Include="linq\DmssClasses.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DmssClasses.dbml</DependentUpon>
-    </Compile>
-    <Compile Include="ExcelExport.aspx.cs">
-      <DependentUpon>ExcelExport.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ExcelExport.aspx.designer.cs">
-      <DependentUpon>ExcelExport.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="linq\MapClasses.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MapClasses.dbml</DependentUpon>
-    </Compile>
-    <Compile Include="pharm.Master.cs">
-      <DependentUpon>pharm.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pharm.Master.designer.cs">
-      <DependentUpon>pharm.Master</DependentUpon>
-    </Compile>
-    <Compile Include="PharmService.asmx.cs">
-      <DependentUpon>PharmService.asmx</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QueryRepo.cs" />
-    <Compile Include="Connections.cs" />
-    <Compile Include="Search.cs" />
-    <Compile Include="linq\SiteClasses.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SiteClasses.dbml</DependentUpon>
-    </Compile>
-    <Compile Include="PharmContent.aspx.cs">
-      <DependentUpon>PharmContent.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PharmContent.aspx.designer.cs">
-      <DependentUpon>PharmContent.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="linq\SiteClasses.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>SiteClasses.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
-    <Content Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
-    <Content Include="Web.UAT.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="linq\ArchiveClasses.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>ArchiveClasses.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="linq\SiteClasses.dbml.layout">
-      <DependentUpon>SiteClasses.dbml</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="linq\ArchiveClasses.dbml.layout">
-      <DependentUpon>ArchiveClasses.dbml</DependentUpon>
-    </None>
-    <None Include="linq\DmssClasses.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>DmssClasses.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="linq\CssPharm.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>CssPharm.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="linq\DmssClasses.dbml.layout">
-      <DependentUpon>DmssClasses.dbml</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="linq\CssPharm.dbml.layout">
-      <DependentUpon>CssPharm.dbml</DependentUpon>
-    </None>
-    <None Include="linq\MapClasses.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>MapClasses.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="css\themes\redmond\jquery-ui-1.8.16.custom.css.bak" />
-    <None Include="linq\MapClasses.dbml.layout">
-      <DependentUpon>MapClasses.dbml</DependentUpon>
-    </None>
     <Content Include="css\themes\redmond\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="css\themes\redmond\images\ui-bg_flat_55_fbec88_40x100.png" />
     <Content Include="css\themes\redmond\images\ui-bg_glass_75_d0e5f5_1x400.png" />
@@ -354,7 +210,6 @@
     <Content Include="scripts\lib\jquery.jqGrid.min.js" />
     <Content Include="scripts\app\jquery.plugins.js" />
     <Content Include="scripts\lib\json2.js" />
-    <Content Include="pharm.Master" />
     <Content Include="css\themes\hot-sneaks\images\ui-bg_diagonals-small_40_db4865_40x40.png" />
     <Content Include="css\themes\hot-sneaks\images\ui-bg_diagonals-small_50_93c3cd_40x40.png" />
     <Content Include="css\themes\hot-sneaks\images\ui-bg_diagonals-small_50_ff3853_40x40.png" />
@@ -371,11 +226,12 @@
     <Content Include="css\themes\hot-sneaks\images\ui-icons_ffeb33_256x240.png" />
     <Content Include="css\themes\hot-sneaks\images\ui-icons_ffffff_256x240.png" />
     <Content Include="css\themes\hot-sneaks\jquery-ui-1.8.20.custom.css" />
-    <Content Include="PharmContent.aspx" />
     <Content Include="scripts\lib\underscore-min.js" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
