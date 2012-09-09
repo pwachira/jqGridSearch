@@ -1,4 +1,4 @@
-To reproduce the error, go to the Archive tab, the orderdetails tab then on the drop down select orders, the grid should show up.
+To reproduce the error,in IE8, go to the Archive tab, the orderdetails tab then on the drop down select orders, the grid should show up.
 click on the search magnifying glass.
 This is very important - change the column to any other than the 1st one - example, choose 'SendingApplication'.
 For the operators, choose equal or not equal(contains always seems to work)
