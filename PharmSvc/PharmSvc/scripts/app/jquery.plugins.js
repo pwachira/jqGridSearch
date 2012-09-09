@@ -51,10 +51,9 @@
                                 showQuery: true,
                                 //searchOnEnter: true,
                                 onSearch: function () {
-                                   // $('body a[id$=_search]').;
                                     var pdata = options.formData.serializeForm(), siteenv = $('#siteForm').serializeForm();
                                     $.extend($(theId).jqGrid('getGridParam', 'postData'), pdata, siteenv);
-                                    $(theId).setGridParam({ datatype: 'json' }).trigger('reloadGrid');
+                                    $(theId)/*.setGridParam({ datatype: 'json' })*/.trigger('reloadGrid');
                                 }
                             })
                             .jqGrid('navButtonAdd', options.pager, { caption: "Columns"

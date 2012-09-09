@@ -6823,11 +6823,6 @@ $.extend($.fn.jqFilter,{
 	{
 		var s;
 		this.each(function(){ 
-            $(this).find(".input-elm").each(function() {
-                $(this).on('blur',function(){$(this).triggerHandler("change")});
-                $(this).trigger("blur");
-                $(this).triggerHandler("change");
-            });
 			s = this.p.filter;
 		});
 		return s;
@@ -7083,18 +7078,9 @@ $.jgrid.extend({
 					// to provide backward compatibility, inferring stringResult value from multipleSearch
 					p.stringResult = p.multipleSearch;
 				}
-			    /*
-                $("body").on('mouseleave','.input-elm',function(){
-                   console.log('input-elm mouseleft');
-                    $(this).find('.input-elm').each(function(){
-                        $(this).triggerHandler('change');
-                        console.log('class if this in focus handler:'+$(this).attr('class'));
-                    });
-                });
-                */
+
                $("#"+fid+"_search").bind('click', function(){
-                   // console.log('search clicked');
-                    $("#"+fid+"_search").focus()/*.click()*/;
+                    $("#"+fid+"_search").focus();
                     var fl = $("#"+fid),
 					sdata={}, res ,
 					filters = fl.jqFilter('filterData');
