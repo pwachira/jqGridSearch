@@ -200,6 +200,7 @@
     <Content Include="scripts\lib\jquery.jqGrid-4.4.1\src\jqModal.js" />
     <Content Include="scripts\lib\jquery.jqGrid-4.4.1\src\jquery.fmatter.js" />
     <Content Include="scripts\lib\jquery.jqGrid-4.4.1\src\JsonXml.js" />
+    <Content Include="searchdemo.htm" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

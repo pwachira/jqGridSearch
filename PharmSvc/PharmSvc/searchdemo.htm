@@ -36,13 +36,11 @@
                         console.log("Error ,Type: " + st + "; Response: " + xhr.status + " " + xhr.statusText);
                     }
                 });
+
                 $('#grid').jqGrid({
                     datatype: 'json',
                     url:'demoService.asmx',
                     width:'400',
-                    data: [{Code: 'code1'},
-                        {Code: 'code2'},
-                        {Code: 'code3'}],
                     colNames: ['Code'],
                     colModel: [{
                         name: 'Code',
