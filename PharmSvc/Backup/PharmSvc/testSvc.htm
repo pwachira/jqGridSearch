@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Test Service</title>
+    <link rel ="Stylesheet" type="text/css" href= "/css/themes/ui-lightness/jquery-ui-1.8.16.custom.css" /> 
+    <link rel ="Stylesheet" type="text/css" href= "/css/pharm.css" /> 
+    <link href="css/ui.jqgrid.css" rel="stylesheet" type="text/css" />
+    
+    <script type="text/javascript" src="/js/jquery-1.6.2.min.js"></script> 
+    <script type="text/javascript" src="/js/jquery-ui-1.8.16.custom.min.js"></script> 
+    <script type="text/javascript" src="/js/pharm.js"></script> 
+    <script src="js/grid.locale-en.js" type="text/javascript"></script>
+    <script src="js/jquery.jqGrid.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        $(function() {
+            $.ajax({
+                type: "POST",
+                url: "PharmService.asmx/GetOrders",
+                data: '{SiteCode:"BatonRougeGeneralLA",Environment:"Implementation",Start:"2011-10-1",End:"2011-10-2",rows:"20",page:"1",SearchField:"",SearchValue:""}',
+                contentType: "application/json;charset=utf-8",
+                datatype: "json",
+                success: function(msg) {
+                    var data = msg.d;
+                    console.log(data);
+                },
+                error: function() {
+                    console.log("error");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

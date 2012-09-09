@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="AHSHospCorpNJ_DMSS" Class="DmssClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=dmssimp100;Initial Catalog=AHSHospCorpNJ_DMSS;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="AHSHospCorpNJ_DMSSConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CSS_RxOrder" Member="CSS_RxOrders">
+    <Type Name="CSS_RxOrder">
+      <Column Name="OrderId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LoaderId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MRN" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TransactionLDT" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="MessageLDT" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="PatientName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Location" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RoomBed" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="site_tk" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InsertedLDT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="patient_tk" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="CSS_RxOrder_CSS_RxOrderDetail" Member="CSS_RxOrderDetails" ThisKey="OrderId" OtherKey="OrderId" Type="CSS_RxOrderDetail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CSS_RxOrderDetail" Member="CSS_RxOrderDetails">
+    <Type Name="CSS_RxOrderDetail">
+      <Column Name="OrderId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ItemId" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PrescriptionNumber" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UniquePrescriptionNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SiteOrderControlId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="OrderStartLDT" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="OrderStopLDT" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SiteDrugId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DrugDosage" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="SiteRouteId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="SiteOrderingDoctorId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TimingDurationId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OrderEffectiveLDT" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="TimingTextId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RepeatPatternId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="original_OrderStopLDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="encounter_tk" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="site_tk" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="loaded" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="original_OrderStartLDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SiteDrugConditionId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SiteDrugPriorityId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="CSS_RxOrder_CSS_RxOrderDetail" Member="CSS_RxOrder" ThisKey="OrderId" OtherKey="OrderId" Type="CSS_RxOrder" IsForeignKey="true" />
+      <Association Name="CSS_SiteRoute_CSS_RxOrderDetail" Member="CSS_SiteRoute" ThisKey="SiteRouteId" OtherKey="SiteRouteId" Type="CSS_SiteRoute" IsForeignKey="true" />
+      <Association Name="CSS_SiteOrderControl_CSS_RxOrderDetail" Member="CSS_SiteOrderControl" ThisKey="SiteOrderControlId" OtherKey="SiteOrderControlId" Type="CSS_SiteOrderControl" IsForeignKey="true" />
+      <Association Name="CSS_IntervalRepeatPattern_CSS_RxOrderDetail" Member="CSS_IntervalRepeatPattern" ThisKey="RepeatPatternId" OtherKey="RepeatPatternId" Type="CSS_IntervalRepeatPattern" IsForeignKey="true" />
+      <Association Name="CSS_SiteDoctor_CSS_RxOrderDetail" Member="CSS_SiteDoctor" ThisKey="SiteOrderingDoctorId" OtherKey="SiteDoctorId" Type="CSS_SiteDoctor" IsForeignKey="true" />
+      <Association Name="CSS_SiteDrug_CSS_RxOrderDetail" Member="CSS_SiteDrug" ThisKey="SiteDrugId" OtherKey="SiteDrugId" Type="CSS_SiteDrug" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CSS_SiteDrug" Member="CSS_SiteDrugs">
+    <Type Name="CSS_SiteDrug">
+      <Column Name="SiteDrugId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SiteDrugCode" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="SiteDrugName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Strength" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Units" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="MappedBy" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MappedLDT" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="NameOfCodingSystem" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="InsertedLDT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedLDT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="MappedPharmacyDrug" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="MappedPharmacyUnit" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="isReleased" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MappingConfidenceLevel" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="isReviewed" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="CSS_SiteDrug_CSS_SiteDrugRoute" Member="CSS_SiteDrugRoutes" ThisKey="SiteDrugId" OtherKey="SiteDrugId" Type="CSS_SiteDrugRoute" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CSS_SiteRoute" Member="CSS_SiteRoutes">
+    <Type Name="CSS_SiteRoute">
+      <Column Name="SiteRouteId" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SiteRouteCode" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="InsertedLDT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedLDT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="MappedPharmacyRoute" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="CSS_SiteRoute_CSS_RxOrderDetail" Member="CSS_RxOrderDetails" ThisKey="SiteRouteId" OtherKey="SiteRouteId" Type="CSS_RxOrderDetail" />
+      <Association Name="CSS_SiteRoute_CSS_Prescription" Member="CSS_Prescriptions" ThisKey="SiteRouteId" OtherKey="SiteRouteId" Type="CSS_Prescription" />
+      <Association Name="CSS_SiteRoute_CSS_SiteDrugRoute" Member="CSS_SiteDrugRoutes" ThisKey="SiteRouteId" OtherKey="SiteRouteId" Type="CSS_SiteDrugRoute" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CSS_SiteOrderControl" Member="CSS_SiteOrderControls">
+    <Type Name="CSS_SiteOrderControl">
+      <Column Name="SiteOrderControlId" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OrderControlCode" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="OrderControlDesc" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ProcessingOrder" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="InsertedLDT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedLDT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="CSS_SiteOrderControl_CSS_RxOrderDetail" Member="CSS_RxOrderDetails" ThisKey="SiteOrderControlId" OtherKey="SiteOrderControlId" Type="CSS_RxOrderDetail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CSS_Prescription" Member="CSS_Prescriptions">
+    <Type Name="CSS_Prescription">
+      <Column Name="PrescriptionId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TreatmentId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PrescriptionNumber" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UniquePrescriptionNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SiteDrugId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SiteRouteId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="DrugDosage" Type="System.Decimal" DbType="Decimal(15,4) NOT NULL" CanBeNull="false" />
+      <Column Name="PrescriptionStartLDT" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="PrescriptionStopLDT" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="OrderingDoctorId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Location" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RoomBed" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MessageLDT" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="InsertedLDT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedLDT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="RepeatPatternId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SiteDrugConditionID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SiteDrugPriorityID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="encounter_tk" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="site_tk" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="isUpdated" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="isAutoDiscontinued" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="isCanceled" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MRN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="original_MRN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="OrderId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="originalStopLDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="OrderFlag" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="CSS_Prescription_CSS_PrescriptionChangeHistory" Member="CSS_PrescriptionChangeHistories" ThisKey="PrescriptionId" OtherKey="PrescriptionId" Type="CSS_PrescriptionChangeHistory" />
+      <Association Name="CSS_SiteDrug_CSS_Prescription" Member="CSS_SiteDrug" ThisKey="SiteDrugId" OtherKey="SiteDrugId" Type="CSS_SiteDrug" IsForeignKey="true" />
+      <Association Name="CSS_SiteRoute_CSS_Prescription" Member="CSS_SiteRoute" ThisKey="SiteRouteId" OtherKey="SiteRouteId" Type="CSS_SiteRoute" IsForeignKey="true" />
+      <Association Name="CSS_IntervalRepeatPattern_CSS_Prescription" Member="CSS_IntervalRepeatPattern" ThisKey="RepeatPatternId" OtherKey="RepeatPatternId" Type="CSS_IntervalRepeatPattern" IsForeignKey="true" />
+      <Association Name="CSS_SiteDrugCondition_CSS_Prescription" Member="CSS_SiteDrugCondition" ThisKey="SiteDrugConditionID" OtherKey="SiteDrugConditionId" Type="CSS_SiteDrugCondition" IsForeignKey="true" />
+      <Association Name="CSS_SiteDrugPriority_CSS_Prescription" Member="CSS_SiteDrugPriority" ThisKey="SiteDrugPriorityID" OtherKey="SiteDrugPriorityId" Type="CSS_SiteDrugPriority" IsForeignKey="true" />
+      <Association Name="CSS_SiteDoctor_CSS_Prescription" Member="CSS_SiteDoctor" ThisKey="OrderingDoctorId" OtherKey="SiteDoctorId" Type="CSS_SiteDoctor" IsForeignKey="true" />
+      <Association Name="CSS_SiteDrugRoute_CSS_Prescription" Member="CSS_SiteDrugRoute" ThisKey="SiteDrugId,SiteRouteId" OtherKey="SiteDrugId,SiteRouteId" Type="CSS_SiteDrugRoute" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CSS_IntervalRepeatPattern" Member="CSS_IntervalRepeatPatterns">
+    <Type Name="CSS_IntervalRepeatPattern">
+      <Column Name="RepeatPatternId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RepeatPatternCode" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RepeatPatternDesc" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="InsertedLDT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedLDT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="MappedRepeatPattern" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsPRN" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsOneTime" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="CSS_IntervalRepeatPattern_CSS_RxOrderDetail" Member="CSS_RxOrderDetails" ThisKey="RepeatPatternId" OtherKey="RepeatPatternId" Type="CSS_RxOrderDetail" />
+      <Association Name="CSS_IntervalRepeatPattern_CSS_Prescription" Member="CSS_Prescriptions" ThisKey="RepeatPatternId" OtherKey="RepeatPatternId" Type="CSS_Prescription" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CSS_SiteDoctor" Member="CSS_SiteDoctors">
+    <Type Name="CSS_SiteDoctor">
+      <Column Name="SiteDoctorId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DoctorId" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="DoctorName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="site_tk" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InsertedLDT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedLDT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="CSS_SiteDoctor_CSS_RxOrderDetail" Member="CSS_RxOrderDetails" ThisKey="SiteDoctorId" OtherKey="SiteOrderingDoctorId" Type="CSS_RxOrderDetail" />
+      <Association Name="CSS_SiteDoctor_CSS_Prescription" Member="CSS_Prescriptions" ThisKey="SiteDoctorId" OtherKey="OrderingDoctorId" Type="CSS_Prescription" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CSS_SiteDrugCondition" Member="CSS_SiteDrugConditions">
+    <Type Name="CSS_SiteDrugCondition">
+      <Column Name="SiteDrugConditionId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SiteDrugConditionCode" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SiteDrugConditionDesc" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="InsertedLDT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedLDT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="MappedCondition" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsPRN" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsOneTime" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="CSS_SiteDrugCondition_CSS_Prescription" Member="CSS_Prescriptions" ThisKey="SiteDrugConditionId" OtherKey="SiteDrugConditionID" Type="CSS_Prescription" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CSS_SiteDrugPriority" Member="CSS_SiteDrugPriorities">
+    <Type Name="CSS_SiteDrugPriority">
+      <Column Name="SiteDrugPriorityId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SiteDrugPriorityCode" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SiteDrugPriorityDesc" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="InsertedLDT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedLDT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="MappedPriority" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsPRN" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsOneTime" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="CSS_SiteDrugPriority_CSS_Prescription" Member="CSS_Prescriptions" ThisKey="SiteDrugPriorityId" OtherKey="SiteDrugPriorityID" Type="CSS_Prescription" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CSS_PrescriptionChangeHistory" Member="CSS_PrescriptionChangeHistories">
+    <Type Name="CSS_PrescriptionChangeHistory">
+      <Column Name="PrescriptionId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="OrderId" Type="System.Int32" DbType="Int" IsPrimaryKey="true" CanBeNull="true" />
+      <Column Name="ItemId" Type="System.Int16" DbType="SmallInt" IsPrimaryKey="true" CanBeNull="true" />
+      <Column Name="ChangeType" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ChangeLDT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="relatedTreatmentPrescriptionId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="CSS_Prescription_CSS_PrescriptionChangeHistory" Member="CSS_Prescription" ThisKey="PrescriptionId" OtherKey="PrescriptionId" Type="CSS_Prescription" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CSS_SiteDrugRoute" Member="CSS_SiteDrugRoutes">
+    <Type Name="CSS_SiteDrugRoute">
+      <Column Name="SiteDrugId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SiteRouteId" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PharmacyDrugId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="CSS_SiteDrugRoute_CSS_Prescription" Member="CSS_Prescriptions" ThisKey="SiteDrugId,SiteRouteId" OtherKey="SiteDrugId,SiteRouteId" Type="CSS_Prescription" />
+      <Association Name="CSS_SiteDrug_CSS_SiteDrugRoute" Member="CSS_SiteDrug" ThisKey="SiteDrugId" OtherKey="SiteDrugId" Type="CSS_SiteDrug" IsForeignKey="true" />
+      <Association Name="CSS_SiteRoute_CSS_SiteDrugRoute" Member="CSS_SiteRoute" ThisKey="SiteRouteId" OtherKey="SiteRouteId" Type="CSS_SiteRoute" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

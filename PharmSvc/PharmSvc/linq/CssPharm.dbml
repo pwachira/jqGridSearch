@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CSS_PharmData" Class="CssPharmDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=cdprod100;Initial Catalog=CSS_PharmData;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="CSS_PharmDataConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CSS_PharmacyClassCombo" Member="CSS_PharmacyClassCombos">
+    <Type Name="CSS_PharmacyClassCombo">
+      <Column Name="PharmacyClassComboId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PharmacyDrugId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PharmacyClassId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MappedPartialDrug" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="CSS_PharmacyClass_CSS_PharmacyClassCombo" Member="CSS_PharmacyClass" ThisKey="PharmacyClassId" OtherKey="PharmacyClassId" Type="CSS_PharmacyClass" IsForeignKey="true" />
+      <Association Name="CSS_PharmacyDrug_CSS_PharmacyClassCombo" Member="CSS_PharmacyDrug" ThisKey="PharmacyDrugId" OtherKey="PharmacyDrugId" Type="CSS_PharmacyDrug" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CSS_PharmacyClass" Member="CSS_PharmacyClasses">
+    <Type Name="CSS_PharmacyClass">
+      <Column Name="PharmacyClassId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PharmacyClassDescription" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="HierarchyLevel" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ParentId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PharmacyClassProperties" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="InsertedUDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedUDT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PharmacyClassType" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="PharmacyClassName" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="PharmacyParentClassName" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="IsComboClass" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="CSS_PharmacyClass_CSS_PharmacyClassCombo" Member="CSS_PharmacyClassCombos" ThisKey="PharmacyClassId" OtherKey="PharmacyClassId" Type="CSS_PharmacyClassCombo" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CSS_TreatmentProfile" Member="CSS_TreatmentProfiles">
+    <Type Name="CSS_TreatmentProfile">
+      <Column Name="TreatmentProfileId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TreatmentProfileName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="AvgDurationHours" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TreatmentProfileProperties" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="InsertedUDT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedUDT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="isDeleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DeletedBy" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="CSS_TreatmentProfile_CSS_PharmacyDrug" Member="CSS_PharmacyDrugs" ThisKey="TreatmentProfileId" OtherKey="TreatmentProfileId" Type="CSS_PharmacyDrug" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CSS_PharmacyDrug" Member="CSS_PharmacyDrugs">
+    <Type Name="CSS_PharmacyDrug">
+      <Column Name="PharmacyDrugId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MappedPharmacyDrug" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="MappedPharmacyUnit" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MappedPharmacyRoute" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TreatmentProfileId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PharmacyDrugProperties" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Association Name="CSS_PharmacyDrug_CSS_PharmacyClassCombo" Member="CSS_PharmacyClassCombos" ThisKey="PharmacyDrugId" OtherKey="PharmacyDrugId" Type="CSS_PharmacyClassCombo" />
+      <Association Name="CSS_TreatmentProfile_CSS_PharmacyDrug" Member="CSS_TreatmentProfile" ThisKey="TreatmentProfileId" OtherKey="TreatmentProfileId" Type="CSS_TreatmentProfile" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.CSS_GetTreatmentProfiles" Method="CSS_GetTreatmentProfiles">
+    <ElementType Name="CSS_GetTreatmentProfilesResult">
+      <Column Name="TreatmentProfileId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TreatmentProfileName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="AvgDurationHours" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TreatmentProfileProperties" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="InsertedUDT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedUDT" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>

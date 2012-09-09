@@ -1,0 +1,56 @@
+\\redstonefs\ATL\UserHome\peter.wachira\My Documents\Visual Studio 2008\Projects\PharmSvc\PharmSvc\bin\PharmSvc.dll
+\\redstonefs\ATL\UserHome\peter.wachira\My Documents\Visual Studio 2008\Projects\PharmSvc\PharmSvc\bin\PharmSvc.pdb
+\\redstonefs\ATL\UserHome\peter.wachira\My Documents\Visual Studio 2008\Projects\PharmSvc\PharmSvc\obj\Debug\ResolveAssemblyReference.cache
+\\redstonefs\ATL\UserHome\peter.wachira\My Documents\Visual Studio 2008\Projects\PharmSvc\PharmSvc\obj\Debug\PharmSvc.dll
+\\redstonefs\ATL\UserHome\peter.wachira\My Documents\Visual Studio 2008\Projects\PharmSvc\PharmSvc\obj\Debug\PharmSvc.pdb
+\\redstonefs\ATL\UserHome\peter.wachira\My Documents\Visual Studio 2008\Projects\PharmSvc\PharmSvc\bin\System.Data.SqlClient.dll
+\\redstonefs\ATL\UserHome\peter.wachira\My Documents\Visual Studio 2008\Projects\PharmSvc\PharmSvc\bin\LinqToExcel.dll
+\\redstonefs\ATL\UserHome\peter.wachira\My Documents\Visual Studio 2008\Projects\PharmSvc\PharmSvc\bin\log4net.dll
+\\redstonefs\ATL\UserHome\peter.wachira\My Documents\Visual Studio 2008\Projects\PharmSvc\PharmSvc\bin\Remotion.Data.Linq.dll
+\\redstonefs\ATL\UserHome\peter.wachira\My Documents\Visual Studio 2008\Projects\PharmSvc\PharmSvc\bin\Remotion.dll
+\\redstonefs\ATL\UserHome\peter.wachira\My Documents\Visual Studio 2008\Projects\PharmSvc\PharmSvc\bin\Remotion.Interfaces.dll
+\\redstonefs\ATL\UserHome\peter.wachira\My Documents\Visual Studio 2008\Projects\PharmSvc\PharmSvc\bin\LinqToExcel.xml
+C:\Documents and Settings\peter.wachira\My Documents\Visual Studio 2008\projects\PharmSvc\PharmSvc\bin\PharmSvc.dll
+C:\Documents and Settings\peter.wachira\My Documents\Visual Studio 2008\projects\PharmSvc\PharmSvc\bin\PharmSvc.pdb
+C:\Documents and Settings\peter.wachira\My Documents\Visual Studio 2008\projects\PharmSvc\PharmSvc\bin\LinqToExcel.dll
+C:\Documents and Settings\peter.wachira\My Documents\Visual Studio 2008\projects\PharmSvc\PharmSvc\bin\log4net.dll
+C:\Documents and Settings\peter.wachira\My Documents\Visual Studio 2008\projects\PharmSvc\PharmSvc\bin\Remotion.Data.Linq.dll
+C:\Documents and Settings\peter.wachira\My Documents\Visual Studio 2008\projects\PharmSvc\PharmSvc\bin\Remotion.dll
+C:\Documents and Settings\peter.wachira\My Documents\Visual Studio 2008\projects\PharmSvc\PharmSvc\bin\Remotion.Interfaces.dll
+C:\Documents and Settings\peter.wachira\My Documents\Visual Studio 2008\projects\PharmSvc\PharmSvc\bin\System.Data.SqlClient.dll
+C:\Documents and Settings\peter.wachira\My Documents\Visual Studio 2008\projects\PharmSvc\PharmSvc\bin\LinqToExcel.xml
+C:\Documents and Settings\peter.wachira\My Documents\Visual Studio 2008\projects\PharmSvc\PharmSvc\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\peter.wachira\My Documents\Visual Studio 2008\projects\PharmSvc\PharmSvc\obj\Debug\PharmSvc.dll
+C:\Documents and Settings\peter.wachira\My Documents\Visual Studio 2008\projects\PharmSvc\PharmSvc\obj\Debug\PharmSvc.pdb
+C:\Users\peter wachira\Documents\Visual Studio 2008\Projects\PharmSvc3\PharmSvc\PharmSvc\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\peter wachira\Documents\Visual Studio 2008\Projects\PharmSvc3\PharmSvc\PharmSvc\obj\Debug\PharmSvc.dll
+C:\Users\peter wachira\Documents\Visual Studio 2008\Projects\PharmSvc3\PharmSvc\PharmSvc\obj\Debug\PharmSvc.pdb
+C:\Users\peter wachira\Documents\Visual Studio 2008\Projects\PharmSvc3\PharmSvc\PharmSvc\bin\PharmSvc.dll
+C:\Users\peter wachira\Documents\Visual Studio 2008\Projects\PharmSvc3\PharmSvc\PharmSvc\bin\PharmSvc.pdb
+C:\Users\peter wachira\Documents\Visual Studio 2008\Projects\PharmSvc3\PharmSvc\PharmSvc\bin\LinqToExcel.dll
+C:\Users\peter wachira\Documents\Visual Studio 2008\Projects\PharmSvc3\PharmSvc\PharmSvc\bin\log4net.dll
+C:\Users\peter wachira\Documents\Visual Studio 2008\Projects\PharmSvc3\PharmSvc\PharmSvc\bin\Remotion.Data.Linq.dll
+C:\Users\peter wachira\Documents\Visual Studio 2008\Projects\PharmSvc3\PharmSvc\PharmSvc\bin\Remotion.dll
+C:\Users\peter wachira\Documents\Visual Studio 2008\Projects\PharmSvc3\PharmSvc\PharmSvc\bin\Remotion.Interfaces.dll
+C:\Users\peter wachira\Documents\Visual Studio 2008\Projects\PharmSvc3\PharmSvc\PharmSvc\bin\LinqToExcel.xml
+\\redstonefs\ATL\UserHome\peter.wachira\My Documents\Downloads\PharmSvc\PharmSvc\PharmSvc\obj\Debug\ResolveAssemblyReference.cache
+\\redstonefs\ATL\UserHome\peter.wachira\My Documents\Downloads\PharmSvc\PharmSvc\PharmSvc\obj\Debug\PharmSvc.dll
+\\redstonefs\ATL\UserHome\peter.wachira\My Documents\Downloads\PharmSvc\PharmSvc\PharmSvc\bin\PharmSvc.dll
+\\redstonefs\ATL\UserHome\peter.wachira\My Documents\Downloads\PharmSvc\PharmSvc\PharmSvc\bin\PharmSvc.pdb
+\\redstonefs\ATL\UserHome\peter.wachira\My Documents\Downloads\PharmSvc\PharmSvc\PharmSvc\bin\LinqToExcel.dll
+\\redstonefs\ATL\UserHome\peter.wachira\My Documents\Downloads\PharmSvc\PharmSvc\PharmSvc\bin\log4net.dll
+\\redstonefs\ATL\UserHome\peter.wachira\My Documents\Downloads\PharmSvc\PharmSvc\PharmSvc\bin\Remotion.Data.Linq.dll
+\\redstonefs\ATL\UserHome\peter.wachira\My Documents\Downloads\PharmSvc\PharmSvc\PharmSvc\bin\Remotion.dll
+\\redstonefs\ATL\UserHome\peter.wachira\My Documents\Downloads\PharmSvc\PharmSvc\PharmSvc\bin\Remotion.Interfaces.dll
+\\redstonefs\ATL\UserHome\peter.wachira\My Documents\Downloads\PharmSvc\PharmSvc\PharmSvc\bin\LinqToExcel.xml
+\\redstonefs\ATL\UserHome\peter.wachira\My Documents\Downloads\PharmSvc\PharmSvc\PharmSvc\obj\Debug\PharmSvc.pdb
+\\redstonefs\ATL\UserHome\peter.wachira\My Documents\Visual Studio 2010\Projects\PharmSvc\PharmSvc\bin\PharmSvc.dll
+\\redstonefs\ATL\UserHome\peter.wachira\My Documents\Visual Studio 2010\Projects\PharmSvc\PharmSvc\bin\PharmSvc.pdb
+\\redstonefs\ATL\UserHome\peter.wachira\My Documents\Visual Studio 2010\Projects\PharmSvc\PharmSvc\obj\Debug\ResolveAssemblyReference.cache
+\\redstonefs\ATL\UserHome\peter.wachira\My Documents\Visual Studio 2010\Projects\PharmSvc\PharmSvc\obj\Debug\PharmSvc.dll
+\\redstonefs\ATL\UserHome\peter.wachira\My Documents\Visual Studio 2010\Projects\PharmSvc\PharmSvc\obj\Debug\PharmSvc.pdb
+C:\Users\peter wachira\Documents\Visual Studio 2010\Projects\PharmSvc0906-3\PharmSvc\PharmSvc\bin\PharmSvc.dll
+C:\Users\peter wachira\Documents\Visual Studio 2010\Projects\PharmSvc0906-3\PharmSvc\PharmSvc\bin\PharmSvc.pdb
+C:\Users\peter wachira\Documents\Visual Studio 2010\Projects\PharmSvc0906-3\PharmSvc\PharmSvc\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\peter wachira\Documents\Visual Studio 2010\Projects\PharmSvc0906-3\PharmSvc\PharmSvc\obj\Debug\PharmSvc.dll
+C:\Users\peter wachira\Documents\Visual Studio 2010\Projects\PharmSvc0906-3\PharmSvc\PharmSvc\obj\Debug\PharmSvc.pdb

@@ -1,0 +1,22 @@
+﻿body
+{
+/*filter:progid:DXImageTransform.Microsoft.Gradient(startColorstr='#E8E8E8',endColor='#FFFFFF');*/
+/*background:-moz-linear-gradient(top,#FFDAA3,#FFF)*/
+ background-color:#E8E8E8;font-size:0.75
+}
+#Environment.EnvironmentSelect{width:10em;	}
+#header #body #footer{display:block}
+#content{height:auto;width:auto}
+#dataTypeRadio{display:inline;margin-right:0}
+#SiteFieldSet{height:2em; width:auto; margin-bottom:5px;margin-top:2px}
+#submit{float:right}
+input[type="radio"]{width:1em}
+.ui-button { margin-left: -1px; }
+.ui-button-icon-only .ui-button-text {font-size:1.0em} 
+.DataContent{height:660px;overflow:auto;position:relative}
+#ifrmRawSearch{height:100%;width:100%}
+.StatsDiv{border:1px solid; border-radius:2px;margin:10px;overflow:auto;position:relative; height:auto}
+.StatsDiv>input.ui-button{margin:5px}
+.ui-tabs .ui-tabs-panel{padding:1em 0 0 0}
+.GridAlt{background-color:#E8E8E8;background-image:none}
+

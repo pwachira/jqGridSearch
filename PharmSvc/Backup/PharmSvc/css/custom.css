@@ -1,0 +1,29 @@
+﻿body
+{
+/*filter:progid:DXImageTransform.Microsoft.Gradient(startColorstr='#E8E8E8',endColor='#FFFFFF');*/
+/*background:-moz-linear-gradient(top,#FFDAA3,#FFF)*/
+ /*background-color:#E8E8E8; for redmond*/
+ font-size:75%;
+ background-color:#FFF
+}
+#Environment.EnvironmentSelect{width:10em;	}
+#header #body #footer{display:block}
+#content{height:auto}
+#dataTypeRadio{display:inline;margin-right:0}
+#SiteFieldSet{height:2em; width:auto; margin-bottom:5px;margin-top:2px}
+#submit{float:right}
+input[type="radio"]{width:1em}
+.ui-button { margin-left: -1px; }
+.ui-button-icon-only .ui-button-text {font-size:1.0em} 
+.DataContent{height:660px;overflow:auto;position:relative}
+#ifrmRawSearch{height:100%;width:100%}
+.StatsDiv{border:1px solid; border-radius:2px;margin:10px;overflow:auto;position:relative; height:auto}
+.StatsDiv>input.ui-button{margin:5px}
+.ui-tabs .ui-tabs-panel{padding:1em 0 0 0}
+#MapFilePath{width:400px}
+div#LeftContent{float:left;width:50px; margin-right:130px}
+div#RightContent{float:left;width:500px;/*margin-left:75px*/}
+.GridAlt{background-color:#E3E4FA;background-image:none;color:Black}
+.setColumns{}
+.datepicker{}
+.MMgrid{}
