@@ -40,135 +40,30 @@
                     }
                 });
 
-                $('#ArchiveQuerySelect').change(function () {
-                    switch ($(this).val()) {
-                        case 'DateTimes%':
-                            $('#ArchStatsTable').phmPlugin('modJqGrid', { pager: '#ArchStatsPager', gridOpts: mthds.timesGridOpts, formData: $('#ArchStatsForm') });
-                            break;
-                        case 'Data%':
-                            $('#ArchStatsTable').phmPlugin('modJqGrid', { pager: '#ArchStatsPager', gridOpts: mthds.fieldsGridOpts, formData: $('#ArchStatsForm') });
-                            break;
-                        case 'MinMaxDates':
-                            $('#ArchStatsTable').phmPlugin('modJqGrid', { pager: '#ArchStatsPager', gridOpts: mthds.archMinMaxGridOpts, formData: $('#ArchStatsForm') });
-                            break;
-                        case 'OrderControls':
-                            $('#ArchStatsTable').phmPlugin('modJqGrid', { pager: '#ArchStatsPager', gridOpts: mthds.orderControlGridOpts, formData: $('#ArchStatsForm') });
-                            break;
-                        default:
-                            $('#ArchStatsTable').jqGrid('GridUnload');
-                    }
-
-                });
-                //Unload prescription grid whether its there or not
-                $('#d-OrderSelect').change(function () {
-                    $('div#DmssOrderDetails table.MMgrid').jqGrid('GridUnload');
-                    switch ($(this).val()) {
-                        case 'Orders-Rx':
-                            $('#d-OrderTable').phmPlugin('modJqGrid', { pager: '#d-OrdersPager', gridOpts: mthds.ordersGridOpts, formData: $('#d-OrderForm') });
-                            $('#d-RxTable').phmPlugin('modJqGrid', { pager: '#d-Rxpager', gridOpts: mthds.rxGridOpts, formData: $('#d-OrderForm') });
-                            break;
-                        case 'SiteDrugs':
-                            $('#d-OrderTable').phmPlugin('modJqGrid', { pager: '#d-OrdersPager', gridOpts: mthds.siteDrugsGridOpts, formData: $('#d-OrderForm') });
-                            break;
-                        case 'SiteRoutes':
-                            $('#d-OrderTable').phmPlugin('modJqGrid', { gridOpts: mthds.siteRoutesGridOpts, formData: $('#d-OrderForm'), pager: '#d-OrdersPager' });
-                            break;
-                        case 'AllSiteDrugs':
-                            $('#d-OrderTable').phmPlugin('cummulativeJqGrid', { pager: '#d-OrdersPager',
-                                gridOpts: mthds.allDrugsGridOpts, formData: $('#d-OrderForm'), url: "PharmService.asmx/SiteDrugs"
-                            });
-                            break;
-                        case 'SiteDrugRoutes':
-                            $('#d-OrderTable').phmPlugin('modJqGrid', { pager: '#d-OrdersPager', gridOpts: mthds.siteDrugRoutesGridOpts, formData: $('#d-OrderForm') });
-                            break;
-                        case 'facilitySplit':
-                            $('#d-OrderTable').phmPlugin('modJqGrid', { pager: '#d-OrdersPager', gridOpts: mthds.facilitySplitGridOpts, formData: $('#d-OrderForm') });
-                            break;
-                        default:
-                    }
-                });
-
-                $('#RxcSelect').change(function () {
-                    switch ($(this).val()) {
-                        case 'Components':
-                            $('#RxcTable').phmPlugin('modJqGrid', { pager: '#RxcPager', gridOpts: mthds.componentsGridOpts, formData: $('#RxcForm') });
-                            break;
-                        case 'DistinctComponents':
-                            $('#RxcTable').phmPlugin('modJqGrid', { pager: '#RxcPager', gridOpts: mthds.distinctRxcGridOpts, formData: $('#RxcForm') });
-                            break;
-                    }
-                });
-                $('#ClassSelect').change(function () {
-                    switch ($(this).val()) {
-                        case 'PharmacyDrugs':
-                            $('#ClassTable').phmPlugin('modJqGrid', { pager: '#ClassPager', gridOpts: mthds.pharmDrugsGridOpts, formData: $('#RxcForm') });
-                            $('#ClassTable').jqGrid('navButtonAdd', '#ClassPager', { caption: 'NoProfiles', title: 'Drugs with no profiles',
-                                onClickButton: function () { console.log('supposed to call pharmacydrugs with no profiles yet') }
-                            });
-                            $('#ClassTable').phmPlugin('getAcData', { url: "PharmService.asmx/ProfilesMapValues", complete: false, key: 'TreatmentProfileName' });
-                            break;
-                        case 'PartialDrugs':
-                            $('#ClassTable').phmPlugin('modJqGrid', { pager: '#ClassPager', gridOpts: mthds.partialDrugsGridOpts, formData: $('#RxcForm') });
-                            break;
-                        case 'Profiles':
-                            $('#ClassTable').phmPlugin('modJqGrid', { pager: '#ClassPager', gridOpts: mthds.profilesGridOpts, formData: $('#RxcForm') });
-                            break;
-                        case 'Classes':
-                            $('#ClassTable').phmPlugin('modJqGrid', { pager: '#ClassPager', gridOpts: mthds.classesGridOpts, formData: $('#RxcForm') });
-                            break;
-                        default:
-                    }
-                });
-
+ 
             });
             </script>    
 </head>
 <body>
 <div id="content" >
-<fieldset id="SiteFieldSet" >
-<form id="siteForm" action="">
-    <label for= "SiteCodes">SiteCode: </label>
-    <input type="text" id="SiteCodes" name = "SiteCode"/>
-        <label for="EnvSelect">Environment: </label>
-        <select id="EnvSelect"  name="Environment">
-            <option value="">Select ...</option>
-            <option value="Implementation">Implementation</option>
-            <option value="Production" selected="selected">Production</option>
-        </select> 
-</form>
-    
-</fieldset>
-<form id= "DataSubmissionForm" method="post" action="" style="display:none" >
-<input id="DataSubmissionText" type="text" name="SubmittedData"/>
-<input id="DataSubmissionType" type="text" name="SubmittedType"/>
-<input id="DataSubmissionBtn" type="submit"/>
-</form>
+
+
 <div id= "Tabs-DataType">
     <ul>
-        <li><a href="#RawData">Raw Data</a> </li>
+ 
         <li><a href="#ArchiveData">Archive Data</a> </li>
-        <li><a href="#DMSSData">Modified Data</a> </li>
-        <li><a href="#Classes">Classification Data</a> </li>
-        <li><a href="#AlertsReports">Alerts/Reports</a> </li> 
        
     </ul>
         <div>
        
              
     </div>
-       <div id="RawData"> 
-        <div id = "RawContent" class="DataContent">
-       <!-- <iframe id = "ifrmRawSearch"src="http://inside101/Mining/RawArchive/RawArchiveSearch.aspx"></iframe>
-        -->
-        </div>
-    </div> 
+ 
     <div id="ArchiveData"> 
             <div id= "Tabs-Archive">
                 <ul>
                     <li><a href="#OrderDetails">Order Details</a> </li>
-                    <li><a href="#AggregateData">Summary</a> </li>
-                    <li><a href="#RXC">RXC-Components</a> </li>
-                    
+
                 </ul>
                 <div id="OrderDetails">
                 <form id="archiveForm" action="">
@@ -190,133 +85,12 @@
                         
                         </div>
                 </div> 
-                <div id="AggregateData">
-                <form id="ArchStatsForm" action="">
-                        <label for="AggMsgStart">MessageDate Start: </label><input id ="AggMsgStart" name = "Start" type ="text" class = "datepicker"/>
-                        <label for="AggMsgEnd">MessageDate End: </label><input id ="AggMsgEnd" name="End" type ="text" class = "datepicker"/>                
-                
-                                 <label for = "ArchiveQuerySelect">Query: </label>
-                                <select id="ArchiveQuerySelect">
-                                    <option value="">Select...</option>
-                                    <option value="OrderControls">OrderControls</option>
-                                    <option value="DateTimes%">DateTimes%</option>
-                                    <option value="MinMaxDates">Min/max Dates</option>
-                                    <option value="Data%">Data%</option>
-                                    <option value="NegativeDuration">NegativeDuration</option>
-                                    <option value="DiffStartTimes">DiffStartTimes</option>
-                                    <option value="MultipleNW">MultipleNW</option>
-                                    <option value="MMNonUniqueRx#">MMNonUniqueRx#</option>
-                                    <option value="SiteNonUniqueRx#">SiteNonUniqueRx#</option>
-                                </select> 
-                        </form>         
-                        <div id = "AggContent" class="DataContent">
-                        <hr/>
-                        <table id="ArchStatsTable" class="MMgrid"></table>
-                        <div id="ArchStatsPager"></div>   
-                        </div>   
-                                      
-                </div>
+
               
-                <div id="RXC">
-                    <form id="RxcForm" action="">
-                        <label for="msgStartDate">MessageDate Start: </label><input id ="RxcStart" name ="Start" type ="text" class = "datepicker"/>
-                        <label for="msgEndDate">MessageDate End: </label><input id ="RxcEnd" name ="End" type ="text" class = "datepicker"/>
-                                <select id="RxcSelect">
-                                <option value="">Select</option>
-                                     <option value="Components">Components</option>
-                                    <option value="DistinctComponents">DistinctComponents</option>
-                                </select>   
-                      </form>                       
-                        <br/>
-                        <div id = "RxcContent" class="DataContent">
-                            <hr/>
-                            <table id="RxcTable" class="MMgrid"></table>
-                             <div id="RxcPager" ></div>
-                        </div>
-                </div>
+
 
            </div>
     </div>
-    <div id="DMSSData"> 
-       <div id = "Tabs-Dmss">
-                <ul>
-                    <li><a href="#DmssOrderDetails">Order Details</a> </li>
-                    <li><a href="#DmssAggregateData"  >PostLoad QA</a> </li>
-                </ul>
-                <div id= "DmssOrderDetails">
-                <form id="d-OrderForm" action="">
-                
-                        <label for="d-msgStartDate">Startdate: </label><input id ="d-msgStartDate" type ="text" name="Start" class = "datepicker"/>
-                        <label for="d-msgEndDate">EndDate: </label><input id ="d-msgEndDate" type ="text" name = "End" class = "datepicker"/>
-                                 <label>Query: </label>
-                                <select id="d-OrderSelect">
-                                    <option value="">Select...</option>
-                                    <option value="Orders-Rx">Orders/Prescriptions</option>
-                                    <option value="SiteDrugs">SiteDrugs</option>
-                                    <option value="AllSiteDrugs">AllSites-SiteDrugs</option>
-                                    <option value="SiteRoutes">SiteRoutes</option>
-                                    <option value="Frequencies">Frequencies</option>
-                                    <option value="Condition">Condition</option>
-                                    <option value="Priority">Priority</option>
-                                    <option value="SiteDrugRoutes">SiteDrugRoutes</option>
-                                    <option value="facilitySplit">FacilitySplit</option>
-                                    <option value="LocationSplit">LocationSplit</option>
-                                </select>  
-               </form>
-                        <div id = "d-Content" class="DataContent">
-                        <hr/>
-                            <!--<div id="LeftContent">
-                               <table id="SiteList" class="MMgrid"></table>
-                             </div >-->
-                             
-                            <div id ="RightContent"> 
-                        <table id="d-OrderTable" class="MMgrid"></table>
-                        <div id="d-OrdersPager" ></div>
-                        <hr/>
-                        <div id="2nd-d-Grid">
-                         <table id="d-RxTable" class="MMgrid"></table>
-                        <div id="d-Rxpager" ></div>
-                        </div>
-                        </div>           
-                        </div>                
-                </div>
-                <div id= "DmssAggregateData">
-                        <label for="d-AggmsgStart">MessageDate Start: </label><input id ="d-AggmsgStart" type ="text" class = "datepicker"/>
-                        <label for="d-AggmsgEnd">MessageDate End: </label><input id ="d-AggmsgEnd" type ="text" class = "datepicker"/>
-                                 <label>SearchField: </label>
-                                <select id="d-AggSelect">
-                                    <option value="">Select...</option>
-                                    <option value="SiteTk">Site Tk</option>
-                                    <option value="FacilityId">Facility Id</option>
-                                </select>  
-                         <label for="d-AggSearchValue">Search Value: </label><input id ="d-AggSearchValue" type ="text"/>
-                        <div id = "d-OrderContent" class="DataContent">
-                        <hr/>
-                                                                                              
-                        </div>                   
-                </div>    
-    
-    </div>
-    </div>
-
-    <div id="Classes" class="DataContent">
-        <form id="ClassForm" action="">
-            <label for="ClassSelect">Query: </label>
-            <select id="ClassSelect">
-                <option value="">Select ...</option>
-                <option value="PharmacyDrugs">PharmacyDrugs</option>
-                <option value="PartialDrugs">PartialDrugs</option>
-                <option value="Profiles">TreatmentProfiles</option>
-                <option value="Classes">Classes</option>
-            </select> 
-        </form>
-        <hr/>
-         <table id="ClassTable" class="MMgrid"></table>
-         <div id="ClassPager" ></div> 
-    
-    </div>
-    <div id="AlertsReports"> Alerts/Reports Options</div>
-
 
 </div>
  
