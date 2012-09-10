@@ -2,36 +2,7 @@
     $.fn.phmPlugin = function (method) {
         var pluginMthds = {
             init: function () { return; },
-            cummulativeJqGrid: function (options) {
-                var opts, pdata, siteenv, theId;
-                var $this = $(this);
-                pdata = options.formData.serializeForm();
-                //hack because grid unload breaks $(this)
-                theId = $this.selector;
-                opts = options.gridOpts({ pager: options.pager });
-                //UNload what wwas there before
-                $this.jqGrid('GridUnload');
-                return $(theId).jqGrid(opts)
-                                .setGridParam({ postData: pdata })
-                                .jqGrid('gridResize')
-                                .jqGrid('navGrid', options.pager, { add: false, edit: false, del: false }, {}, {}, {},
-                                { multipleSearch: true,
-                                    //searchOnEnter: true,
-                                    //showQuery:true,
-                                    onSearch: function () {
-                                        var pdata = options.formData.serializeForm();
-                                        $(theId).setGridParam({ page: 1, postData: pdata,
-                                            datatype: function (postdata) {
-                                                getGridOpts().resetSiteIndex();
-                                                $('#d-OrderTable').data('AllSitesDrugs', []);
-                                                $('#d-OrderTable').jqGrid('clearGridData', true);
-                                                getGridOpts().allSitesData({ postdata: postdata, url: options.url });
-                                            }
-                                        });
-                                    }
-                                });
-
-            },
+ 
             modJqGrid: function (options) {
                 var opts, pdata, siteenv, theId;
                 var $this = $(this);
@@ -67,7 +38,40 @@
                                     return $.excelExport({ entity: gridName, data: exportData });
                                 }
                             });
-            },
+                        },
+
+
+
+                        cummulativeJqGrid: function (options) {
+                            var opts, pdata, siteenv, theId;
+                            var $this = $(this);
+                            pdata = options.formData.serializeForm();
+                            //hack because grid unload breaks $(this)
+                            theId = $this.selector;
+                            opts = options.gridOpts({ pager: options.pager });
+                            //UNload what wwas there before
+                            $this.jqGrid('GridUnload');
+                            return $(theId).jqGrid(opts)
+                                .setGridParam({ postData: pdata })
+                                .jqGrid('gridResize')
+                                .jqGrid('navGrid', options.pager, { add: false, edit: false, del: false }, {}, {}, {},
+                                { multipleSearch: true,
+                                    //searchOnEnter: true,
+                                    //showQuery:true,
+                                    onSearch: function () {
+                                        var pdata = options.formData.serializeForm();
+                                        $(theId).setGridParam({ page: 1, postData: pdata,
+                                            datatype: function (postdata) {
+                                                getGridOpts().resetSiteIndex();
+                                                $('#d-OrderTable').data('AllSitesDrugs', []);
+                                                $('#d-OrderTable').jqGrid('clearGridData', true);
+                                                getGridOpts().allSitesData({ postdata: postdata, url: options.url });
+                                            }
+                                        });
+                                    }
+                                });
+
+                        },
             //autocomplete plugin
             getAcData: function (options) {
                 var $this = $(this);
