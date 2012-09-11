@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1">
+    <title>jgGrid cMTemplate search Error</title>
+
+    <link rel ="Stylesheet" type="text/css" href= "/css/themes/redmond/jquery-ui-1.8.16.custom.css" />
+    <link href="scripts/lib/jquery.jqGrid-4.4.1/css/ui.jqgrid.css" rel="stylesheet" type="text/css" />
+    <script src="scripts/lib/jquery.jqGrid-4.4.1/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="scripts/lib/jquery-ui-1.8.19.custom.min.js" ></script> 
+    <script src="scripts/lib/jquery.jqGrid-4.4.1/js/i18n/grid.locale-en.js" type="text/javascript"></script>
+    <script src="scripts/lib/jquery.jqGrid-4.4.1/js/jquery.jqGrid.src.js" type="text/javascript"></script>
+        <script type="text/javascript">
+
+            $(function () {
+                $('#Table').jqGrid(
+                                {
+                                    colNames: ['col1', 'col2', 'col3', 'col4'],
+                                    cmTemplate: { searchoptions: { sopt: ['bw','cn', 'eq', 'ne'] }, searchrules: { required: true} },
+                                    colModel: [
+                                        { name: 'Col1', index: 'Col1' },
+                                        { name: 'col2', index: 'col2' },
+                                        { name: 'col3', index: 'col3' },
+                                        { name: 'col4', index: 'col4' }
+                                         ],
+                                    pager: '#Pager'
+                                    }
+                            ).jqGrid('navGrid', '#Pager',
+                                { add: false, edit: false, del: false, refresh: false }, {}, {}, {},
+                                { multipleSearch: true,
+                                    showQuery: true
+                                    // ,searchOnEnter: true,
+
+                                });
+
+            });
+            </script>    
+</head>
+<body>
+
+      <div id="Pager" ></div>
+       <table id="Table"></table>
+                        
+ 
+</body>
+</html>
+
