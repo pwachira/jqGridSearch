@@ -1,5 +1,0 @@
-C:\Users\peter wachira\Documents\Visual Studio 2010\Projects\PharmSvc0906-3\PharmSvc\PharmSvc\bin\PharmSvc.dll
-C:\Users\peter wachira\Documents\Visual Studio 2010\Projects\PharmSvc0906-3\PharmSvc\PharmSvc\bin\PharmSvc.pdb
-C:\Users\peter wachira\Documents\Visual Studio 2010\Projects\PharmSvc0906-3\PharmSvc\PharmSvc\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\peter wachira\Documents\Visual Studio 2010\Projects\PharmSvc0906-3\PharmSvc\PharmSvc\obj\Debug\PharmSvc.dll
-C:\Users\peter wachira\Documents\Visual Studio 2010\Projects\PharmSvc0906-3\PharmSvc\PharmSvc\obj\Debug\PharmSvc.pdb
