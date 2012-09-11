@@ -57,8 +57,6 @@
   <ItemGroup>
     <Content Include="css\custom.css" />
     <Content Include="index.htm" />
-    <Content Include="scripts\lib\jquery-1.5.2.min.js" />
-    <Content Include="scripts\lib\jquery-1.6.4.min.js" />
     <Content Include="scripts\lib\jquery.jqGrid-4.4.1\css\ellipsis-xbl.xml" />
     <Content Include="scripts\lib\jquery.jqGrid-4.4.1\css\ui.jqgrid.css" />
     <Content Include="scripts\lib\jquery.jqGrid-4.4.1\js\Changes.txt" />
@@ -203,13 +201,6 @@
     <Content Include="css\themes\redmond\images\ui-icons_d8e7f3_256x240.png" />
     <Content Include="css\themes\redmond\images\ui-icons_f9bd01_256x240.png" />
     <Content Include="css\themes\redmond\jquery-ui-1.8.16.custom.css" />
-    <Content Include="scripts\lib\grid.locale-en.js" />
-    <Content Include="scripts\lib\jquery-ui-1.8.19.custom.min.js" />
-    <Content Include="scripts\app\jquery.ColModels.js" />
-    <Content Include="scripts\app\jquery.GridOpts.js" />
-    <Content Include="scripts\lib\jquery.jqGrid.min.js" />
-    <Content Include="scripts\app\jquery.plugins.js" />
-    <Content Include="scripts\lib\json2.js" />
     <Content Include="css\themes\hot-sneaks\images\ui-bg_diagonals-small_40_db4865_40x40.png" />
     <Content Include="css\themes\hot-sneaks\images\ui-bg_diagonals-small_50_93c3cd_40x40.png" />
     <Content Include="css\themes\hot-sneaks\images\ui-bg_diagonals-small_50_ff3853_40x40.png" />
@@ -226,7 +217,6 @@
     <Content Include="css\themes\hot-sneaks\images\ui-icons_ffeb33_256x240.png" />
     <Content Include="css\themes\hot-sneaks\images\ui-icons_ffffff_256x240.png" />
     <Content Include="css\themes\hot-sneaks\jquery-ui-1.8.20.custom.css" />
-    <Content Include="scripts\lib\underscore-min.js" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.ComponentModel.Composition" />
